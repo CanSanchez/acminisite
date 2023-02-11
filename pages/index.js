@@ -45,6 +45,7 @@ export default function Home() {
           <SearchBar
             setSearch={setNeighbours}
           />
+          <button onClick={()=>router.push('/poll')}>Check Who Won</button>
         </div>
 
         <div className={styles.header} >
@@ -56,14 +57,20 @@ export default function Home() {
 
        <div className={styles.board}>
           {
-            neighbours ?
+            neighbours.length > 0 ?
             neighbours.map((villager, index) => (
               <VillagerCard
                 key={index}
                 name={villager.Name}
                 catchphrase={villager.Catchphrase}
+                icon={villager.icon_uri}
                 image={villager.image_uri}
                 id={villager.Filename}
+                species={villager.Species}
+                personality={villager.Personality}
+                bday={villager.Birthday}
+                hobby={villager.Hobby}
+                song={villager['Favorite Song']}
               />
             ))
             :

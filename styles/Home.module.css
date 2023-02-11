@@ -43,7 +43,17 @@
   align-items: center;
   justify-content: center;
   margin-bottom: .2rem;
+  animation: swing ease-in-out 1.5s infinite alternate;
+  transform-origin: center 2rem;
 }
+ 
+@keyframes swing {
+  0% { transform: rotate(2deg); }
+  /* 25% { transform: rotate(-6deg); }
+  50% { transform: rotate(3deg); } */
+  100% { transform: rotate(-2deg);}
+}
+
 
 .header img {
   width: 100%;

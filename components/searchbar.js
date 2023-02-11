@@ -1,7 +1,3 @@
-//create a searchbar component
-
-// Path: components/searchbar.js
-
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/SearchBar.module.css'
@@ -11,34 +7,33 @@ import villagers from '@/data/villagers.json'
 
 const inter = Inter({ subsets: ['latin'] })
 
-//header component
+//searchbar component
 
 export default function SearchBar(props) {
     const router = useRouter();
 
     const [search, setSearch] = useState('');
-    // console.log(search)
+    console.log(search.length)
 
     const [found, setFound] = useState(villagers);
     // console.log(found)
 
-    //handlesubmit when pressing enter
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (search !== '') {
-        //    if search matches a villager name, redirect to that villager's page
-            const villager = villagers.find(villager => villager.Name === search || villager.Name.toLowerCase() === search)
+            const villager = villagers.filter(villager => villager.Name.toLowerCase().includes(search.toLowerCase()))
             if (villager) {
                 console.log(villager)
-                setFound([villager])
-            }
-            else {
-                console.log('not found')
-                setFound('')
+                setFound(villager.sort())
+            } else {
+                console.log('no match')
             }
         }
     }
+
+    //handlesubmit when pressing enter
 
     const handleEnter = (e) => {
         if (e.key === 'Enter') {
@@ -59,9 +54,7 @@ export default function SearchBar(props) {
                         onChange={(e) => setSearch(e.target.value)}
                         onKeyDown={handleEnter}
                         />
-                    <button type="submit" onClick={handleSubmit}
-                    onk
-                    >
+                    <button type="submit" onClick={handleSubmit}>
                         <img src="/images/search.png" alt="search" />
                     </button>
                 </div>
