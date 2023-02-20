@@ -14,8 +14,7 @@
     background-repeat: no-repeat;
 }
 
-.background {
-    
+.background {  
     transform: translateZ(-50px) scale(4);
 }
 
@@ -39,8 +38,6 @@
 .cloud2,
 .cloud3 {
     position: absolute;
-    /* height: 100%;
-    width: 100%; */
     object-fit: cover;
     z-index: -1;
 }
@@ -74,10 +71,6 @@
     color: #404040;
     font-size: 1.5em;
 }
-
-/* .results div> div > div > p {
-    right: -10em;
-} */
 
 .parallax {
     position: relative;
@@ -127,25 +120,30 @@
 
 /* Tablet */
 @media (min-width: 601px) and (max-width: 1080px) {
- .main > button {
-    top: 3em;
-    left: 3em;
- }
 
- .results > p {
-    font-size: 1em;
- }
+    .main > button {
+        top: 3em;
+        left: 3em;
+    }
+
+    .results > p {
+        font-size: 1em;
+    }
 
     .results > button {
-        margin-bottom: 20em;
+            margin-bottom: 20em;
     }
+        
 }
 
 /* Mobile */
 @media (min-width: 414px) and (max-width: 600px) {
 
-}
+    .main > button {
+       top: 4em;
+    }
 
-@media (prefers-color-scheme: dark) {
-
+    .results > p {
+        font-size: 1em;
+    }
 }

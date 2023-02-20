@@ -1,17 +1,10 @@
-//create a card component
-
-// Path: components/villagercard.js
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '@/styles/VillagerCard.module.css'
-import villagers from '@/data/villagers.json'
-import { useState, useEffect }  from 'react'
-
-const inter = Inter({ subsets: ['latin'] })
+import { useState }  from 'react'
 
 //villagercard component
 export default function VillagerCard( props ) {
    
+   //flip card state
    const [frontFlipped, setFrontFlipped] = useState(true)
 
    return (
@@ -25,9 +18,9 @@ export default function VillagerCard( props ) {
 
                {/* FRONT CARD */}
                <div className={styles.frontcard}>
-                     <div className={styles.cardImage}>
-                        <img src={props.image}/>
-                     </div>
+                  <div className={styles.cardImage}>
+                     <img src={props.image}/>
+                  </div>
                   <div className={styles.cardText}>
                      <h2>{props.name}</h2>
                      <div>
@@ -51,8 +44,8 @@ export default function VillagerCard( props ) {
                            <p>{props.name}</p>
                         </span>
                         <span>
-                        <h4>Birthday</h4>
-                        <p>{props.bday}</p>
+                           <h4>Birthday</h4>
+                           <p>{props.bday}</p>
                         </span>
                      </div>
                      <div className={styles.infodetaildbl}>
@@ -61,8 +54,8 @@ export default function VillagerCard( props ) {
                            <p>{props.species}</p>
                         </span>
                         <span>
-                        <h4>Personality</h4>
-                        <p>{props.personality}</p>
+                           <h4>Personality</h4>
+                           <p>{props.personality}</p>
                         </span>
                      </div>
                      <div className={styles.infodetail}>

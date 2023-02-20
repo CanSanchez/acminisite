@@ -4,9 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import villagers from '@/data/villagers.json'
 
-const inter = Inter({ subsets: ['latin'] })
-
-//header component
+//Header component
 export default function Header(props) {
     
       return (

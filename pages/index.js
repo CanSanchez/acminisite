@@ -1,4 +1,3 @@
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Header from '@/components/header'
 import VillagerCard from '@/components/villagercard'
@@ -8,11 +7,13 @@ import villagers from '@/data/villagers.json'
 import SearchBar from '@/components/searchbar'
 import Splash from '@/components/splash'
 
-
+//home page
 export default function Home() {
 
+  //router
   const router = useRouter();
 
+  //villager state
   const [neighbours, setNeighbours] = useState(villagers)
   // console.log(neighbours)
 
@@ -30,30 +31,31 @@ export default function Home() {
   return (
     <>
       <Header title='Hello Neighbour: Home'/>
-
       <main className={styles.main}>
-      
+        {/* Loading screen */}
         { 
           isLoading &&
-          
             <div className={styles.splash}>
               <Splash />
             </div>
         }
-
+        {/* Navigation bar */}
         <div className={styles.navbar}>
           <SearchBar
             setSearch={setNeighbours}/>
-          <button name='Match Maker' onClick={()=>router.push('/match')}>Try Match Maker</button>
+          <button 
+            name='Match Maker' 
+            onClick={()=>router.push('/match')}>
+            Try Match Maker
+          </button>
         </div>
-
+        {/* Header Image*/}
         <div className={styles.header} >
           <img 
             src="/images/header.png" 
-            alt="Hello Neighbour Header" 
-          />
+            alt="Hello Neighbour Header"/>
         </div>
-
+        {/* Villager Cards */}
        <div className={styles.board}>
           {
             neighbours.length > 0 ?
@@ -74,6 +76,7 @@ export default function Home() {
               />
             ))
             :
+            // Villager not found
             <h1>Not Found</h1>
           }
         </div>

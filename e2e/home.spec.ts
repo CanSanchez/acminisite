@@ -1,8 +1,12 @@
 import { test, expect } from '@playwright/test'
 
+//Home page test
+
+//test url
 let urlHome = "http://localhost:3000";
 let urlMatch = "http://localhost:3000/match";
 
+//test before and after all
 test.beforeAll(async () => {
     console.log('Before tests');
 });
@@ -11,13 +15,17 @@ test.afterAll(async () => {
     console.log('After tests');
 });
 
+//test for header area
 test.describe('Header area', () => {
+
+    //test title tag
     test('The title tag', async({ page }) => {
         await page.goto(urlHome)
 
         await expect(page).toHaveTitle('Hello Neighbour: Home');
     })
 
+    //test meta tag
     test('The meta tag', async ({ page }) => { 
         await page.goto(urlHome)
         
@@ -28,6 +36,7 @@ test.describe('Header area', () => {
         await expect(metaDescriptionTwo).toHaveAttribute("content", "Can Sanchez")
     })
 
+    //test link tag
     test('The link tag', async ({ page }) => {
         await page.goto(urlHome)
 
@@ -37,6 +46,7 @@ test.describe('Header area', () => {
 })
 
 test.describe('Main area', () => {
+
     //test header tag
     test('Header Tag', async({ page }) => {
         await page.goto(urlHome)
@@ -53,7 +63,7 @@ test.describe('Main area', () => {
         await page.getByRole('button', { name:'Match Maker' }).click();
     })
 
-    //test search bar
+    //test search bar to search for villager and press enter
     test('Search Bar', async({ page }) => {
         await page.goto(urlHome)
 
@@ -63,13 +73,14 @@ test.describe('Main area', () => {
     
 })
 
+//test for Match Making button to navigate to match page
 test('should navigate to the match page', async ({ page }) => {
     // Start from the index page (the baseURL is set via the webServer in the playwright.config.ts)
     await page.goto('http://localhost:3000/')
-    // Find an element with the text 'About Page' and click on it
+    // Find an button with name Match Maker and click it
     const matchButton = page.getByRole('button', { name:'Match Maker' });
     await matchButton.click();
-    // The new URL should be "/about" (baseURL is used there)
+    // The new URL should be "/match" (baseURL is used there)
     await expect(page).toHaveURL('http://localhost:3000/match')
     // The new page should contain a button with the text 'Go to Home'
     await expect(page.getByRole('button',  { name:'Go to Home' })).toContainText('Go to Home')

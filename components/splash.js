@@ -8,10 +8,10 @@ import styles from "@/styles/Animation.module.css";
 const Splash = () => {
     return (
         <div className={styles.splash}>
-        <Lottie 
-            animationData={splashanimation}
-            loop={true}
-        />
+            <Lottie 
+                animationData={splashanimation}
+                loop={true}
+            />
         </div>
     );
 };

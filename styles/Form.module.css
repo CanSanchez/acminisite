@@ -27,6 +27,7 @@
     font-weight: 400;
     margin-bottom: 20px;
     text-align: center;
+    color: #fff;
 }
 
 .inputcontainer {
@@ -117,6 +118,7 @@
 
 /* Tablet */
 @media (min-width: 601px) and (max-width: 1080px) {
+
     .form {
         width: 80%;
         max-height: 600px;
@@ -125,10 +127,12 @@
     .submitted {
         font-size: 2.5em;
     }
+
 }
 
 /* Mobile */
 @media (min-width: 390px) and (max-width: 600px) {
+
     .form {
         width: 90%;
         max-height: 600px;
@@ -152,8 +156,5 @@
     .inputcontainer {
         width: 100%;
     }
-}
-
-@media (prefers-color-scheme: dark) {
 
 }

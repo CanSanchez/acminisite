@@ -308,9 +308,5 @@
 
 /* Mobile */
 @media (min-width: 414px) and (max-width: 600px) {
-
-}
-
-@media (prefers-color-scheme: dark) {
-
+    /*  */
 }
