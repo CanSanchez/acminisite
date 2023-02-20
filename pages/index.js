@@ -9,8 +9,6 @@ import SearchBar from '@/components/searchbar'
 import Splash from '@/components/splash'
 
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
 
   const router = useRouter();
@@ -31,7 +29,7 @@ export default function Home() {
   
   return (
     <>
-      <Header title='Hello Neighbour'/>
+      <Header title='Hello Neighbour: Home'/>
 
       <main className={styles.main}>
       
@@ -45,15 +43,14 @@ export default function Home() {
 
         <div className={styles.navbar}>
           <SearchBar
-            setSearch={setNeighbours}
-          />
-          <button onClick={()=>router.push('/match')}>Try Match Maker</button>
+            setSearch={setNeighbours}/>
+          <button name='Match Maker' onClick={()=>router.push('/match')}>Try Match Maker</button>
         </div>
 
         <div className={styles.header} >
           <img 
             src="/images/header.png" 
-            alt="aclogo" 
+            alt="Hello Neighbour Header" 
           />
         </div>
 

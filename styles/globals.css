@@ -112,3 +112,6 @@ p, label {
   }
 }
 
+datalist {
+  display: none;
+}

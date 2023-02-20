@@ -38,7 +38,7 @@
     margin: .5em 0;
 }
 
-.inputcontainer input {
+.inputcontainer select {
     width: 100%;
     padding: 1em;
     font-size: 1em;
@@ -47,6 +47,8 @@
     border: #fff 1px solid;
     background: transparent;
     border-radius: 50px;
+    text-transform: capitalize;
+    appearance: none;
 }
 
 .inputcontainer label {
@@ -62,20 +64,24 @@
 }
 
 
-.inputcontainer input:focus ~ label,
-.inputcontainer input:valid ~ label {
+.inputcontainer select:focus ~ label,
+.inputcontainer select:valid ~ label {
     top: -2em;
     left: 0;
     color: #fff;
     font-size: 1em;
 }
 
-.inputcontainer input:focus,
-.inputcontainer input:valid {
+.inputcontainer select:focus,
+.inputcontainer select:valid {
     background-color: #fff;
     color: #74e0aa;
     border: none;
     outline: none;
+}
+
+.inputcontainer select option {
+    color: #74e0aa;
 }
 
 .form button {
@@ -106,4 +112,47 @@
     font-weight: 500;
     color: rgb(60, 60, 60);
     text-align: center;
+}
+
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 820px) {
+    .form {
+        width: 80%;
+    }
+
+    .submitted {
+        font-size: 2.5em;
+    }
+}
+
+/* Mobile */
+@media (min-width: 414px) and (max-width: 600px) {
+    .form {
+        width: 90%;
+        max-height: 600px;
+        padding: 2em 1.5em;
+    }
+
+    .form > button {
+        margin-top: 3em;
+        margin-left: 3em;
+    }
+
+    .form > p {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .submitted {
+        font-size: 2em;
+    }
+
+    .inputcontainer {
+        width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
 }

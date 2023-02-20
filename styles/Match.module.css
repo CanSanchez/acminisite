@@ -72,6 +72,7 @@
     width: 100%;
     text-align: center;
     color: #404040;
+    font-size: 1.5em;
 }
 
 .results div> div > div > p {
@@ -89,3 +90,62 @@
     z-index: -1;
 } 
 
+.main > button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    margin: 2em;
+    border-radius: 50px;
+    border: none;
+    background: #74e0aa;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.main > button:hover {
+    background: #fff;
+    color: #74e0aa;
+    box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.2);
+}
+
+.results > button {
+    padding: 1em;
+    margin: 2em;
+    border-radius: 50px;
+    border: none;
+    background: #74e0aa;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 820px) {
+ .main > button {
+    top: 3em;
+    left: 3em;
+ }
+
+ .results > p {
+    font-size: 1em;
+ }
+
+    .results > button {
+        margin-bottom: 20em;
+    }
+}
+
+/* Mobile */
+@media (min-width: 414px) and (max-width: 600px) {
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+}

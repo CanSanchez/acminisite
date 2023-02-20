@@ -1,5 +1,3 @@
-//create a form component
-
 import React from 'react';
 import styles from '@/styles/Form.module.css';
 import Header from '@/components/header';
@@ -52,69 +50,61 @@ export default function Form({passData}) {
                         <br />
                         Select the species, personality or hobby you'd like your dream neighbour to have.</p>
                         <form onSubmit={handleSubmit}>
+
                             <div className={styles.inputcontainer}>
-                                <input
+                                <select
                                     required
-                                    type="text"
                                     id="species"
-                                    name="name"
+                                    name="species"
                                     value={species}
                                     onChange={(e) => setSpecies(e.target.value)}
-                                    autoComplete="off"
-                                    list={uniqueSpecies.sort()}
-                                />
-                                <datalist id={uniqueSpecies}>
-                                {
-                                    uniqueSpecies.map((item, index) => (
-                                        <option key={index} value={item} />
-                                    ))
-                                }
-                                </datalist>
+                                >
+                                    <option value=""></option>
+                                    {
+                                        uniqueSpecies.sort().map((item, index) => (
+                                            <option key={index} value={item}>{item}</option>
+                                        ))
+                                    }
+                                </select>
                                 <label htmlFor="species">Species</label>
                             </div>
 
                             <div className={styles.inputcontainer}>
-                                <input
+                                <select
                                     required
-                                    type="text"
                                     id="personality"
                                     name="personality"
                                     value={personality}
                                     onChange={(e) => setPersonality(e.target.value)}
-                                    autoComplete="off"
-                                    list={uniquePersonality.sort()}
-                                />
-                                <datalist id={uniquePersonality}>
+                                >   
+                                    <option value=""></option>
                                     {
-                                        uniquePersonality.map((item, index) => (
-                                            <option key={index} value={item} />
+                                        uniquePersonality.sort().map((item, index) => (
+                                            <option key={index} value={item}>{item}</option>
                                         ))
                                     }
-                                </datalist>
+                                </select>
                                 <label htmlFor="personality">Personality</label>
                             </div>
-
+                                    
                             <div className={styles.inputcontainer}>
-                                <input
+                                <select
                                     required
-                                    type="text"
                                     id="hobby"
                                     name="hobby"
                                     value={hobby}
                                     onChange={(e) => setHobby(e.target.value)}
-                                    autoComplete="off"
-                                    list={uniqueHobby.sort()}
-                                />
-                                <datalist id={uniqueHobby}>
+                                >
+                                    <option value=""></option>
                                     {
-                                        uniqueHobby.map((item, index) => (
-                                            <option key={index} value={item} />
+                                        uniqueHobby.sort().map((item, index) => (
+                                            <option key={index} value={item}>{item}</option>
                                         ))
                                     }
-                                </datalist>
+                                </select>
                                 <label htmlFor="hobby">Hobby</label>
                             </div>
-
+                           
                             <button type="submit"
                                 onClick={()=>passData(matchKeys)}
                                

@@ -14,6 +14,7 @@ export default function Header(props) {
         <Head>
           <title>{props.title}</title>
           <meta name="description" content="Meet your neighbours from Animal Crossing New Horizon" />
+          <meta name="author" content="Can Sanchez" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/aclogo.png" />
         </Head>
