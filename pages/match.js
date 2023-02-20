@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '@/styles/Match.module.css'
 import Header from '@/components/header'
-import Form from '@/components/form'
+import Form from '@/components/Form'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useEffect } from 'react'
