@@ -107,7 +107,7 @@
 }
 
 /* Tablet */
-@media (min-width: 601px) and (max-width: 820px) {
+@media (min-width: 601px) and (max-width: 1080px) {
 
   .main {
     background-image: url('/background/1.png');

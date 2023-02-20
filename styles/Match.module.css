@@ -68,16 +68,16 @@
     top: 65em;
 }
 
-.results p {
+.results > p {
     width: 100%;
     text-align: center;
     color: #404040;
     font-size: 1.5em;
 }
 
-.results div> div > div > p {
+/* .results div> div > div > p {
     right: -10em;
-}
+} */
 
 .parallax {
     position: relative;
@@ -126,7 +126,7 @@
 }
 
 /* Tablet */
-@media (min-width: 601px) and (max-width: 820px) {
+@media (min-width: 601px) and (max-width: 1080px) {
  .main > button {
     top: 3em;
     left: 3em;
