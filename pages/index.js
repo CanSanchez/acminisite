@@ -28,6 +28,7 @@ export default function Home() {
     }, 5000)
   }, [])
 
+  
   return (
     <>
       <Header title='Hello Neighbour'/>
@@ -36,6 +37,7 @@ export default function Home() {
       
         { 
           isLoading &&
+          
             <div className={styles.splash}>
               <Splash />
             </div>
@@ -45,7 +47,7 @@ export default function Home() {
           <SearchBar
             setSearch={setNeighbours}
           />
-          <button onClick={()=>router.push('/poll')}>Check Who Won</button>
+          <button onClick={()=>router.push('/match')}>Try Match Maker</button>
         </div>
 
         <div className={styles.header} >
@@ -60,6 +62,7 @@ export default function Home() {
             neighbours.length > 0 ?
             neighbours.map((villager, index) => (
               <VillagerCard
+                data={villager}
                 key={index}
                 name={villager.Name}
                 catchphrase={villager.Catchphrase}

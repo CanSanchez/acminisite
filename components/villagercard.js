@@ -14,25 +14,8 @@ export default function VillagerCard( props ) {
    
    const [frontFlipped, setFrontFlipped] = useState(true)
 
- //State for favourite button
-
-  const [liked, setLiked] = useState(false)
-  
-   const handleLike = () => {
-      setLiked(!liked)
-      setFrontFlipped(frontFlipped)
-   }
-
-
-
    return (
       <div className={styles.cardcontainer}>
-         <span onClick={handleLike}>
-            <img
-               className={styles.like} 
-               src={ !liked? '/images/unfavourite.png': '/images/favourite.png'}/>
-            <p>Favourite</p>
-         </span>
          <div 
             className={styles.flipcard}
             onClick={()=>{setFrontFlipped(!frontFlipped)}}>
