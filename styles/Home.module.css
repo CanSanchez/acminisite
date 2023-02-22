@@ -139,10 +139,10 @@
   
 @media (min-width: 414px) and (max-width: 600px) {
   
-  .main {
+  /* .main {
     background-image: url('/background/1.png');
     background-size: cover;
-  }
+  } */
 
   .navbar {
     padding: 4em 2em;

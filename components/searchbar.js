@@ -1,4 +1,3 @@
-import { Inter } from '@next/font/google'
 import styles from '@/styles/SearchBar.module.css'
 import { useState } from 'react'
 import villagers from '@/data/villagers.json'
@@ -22,6 +21,8 @@ export default function SearchBar(props) {
             if (villager) {
                 console.log(villager)
                 setFound(villager.sort())
+                 //pass search results to parent component
+                props.setSearch(found)
             } else {
                 console.log('no match')
             }
@@ -35,8 +36,7 @@ export default function SearchBar(props) {
         }
     }
 
-    //pass search results to parent component
-    props.setSearch(found)
+   
 
     return (
         <>
