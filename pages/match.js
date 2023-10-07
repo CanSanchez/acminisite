@@ -78,8 +78,8 @@ export default function Results() {
                                         key={index}
                                         name={villager.Name}
                                         catchphrase={villager.Catchphrase}
-                                        icon={villager.icon_uri}
-                                        image={villager.image_uri}
+                                        icon={`/villagers/${villager.Name}.png`}
+                                        image={`/villagers/${villager.Name}.png`}
                                         id={villager.Filename}
                                         species={villager.Species}
                                         personality={villager.Personality}
@@ -102,8 +102,8 @@ export default function Results() {
                                         key={index}
                                         name={villager.Name}    
                                         catchphrase={villager.Catchphrase}  
-                                        icon={villager.icon_uri}
-                                        image={villager.image_uri}
+                                        icon={`/villagers/${villager.Name}.png`}
+                                        image={`/villagers/${villager.Name}.png`}
                                         id={villager.Filename}
                                         species={villager.Species}
                                         personality={villager.Personality}
